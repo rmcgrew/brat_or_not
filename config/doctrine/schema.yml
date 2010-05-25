@@ -1,0 +1,45 @@
+Post:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      unsigned: true
+      notnull: true
+      autoincrement: true
+    image:
+      type: string(255)
+      notnull: true
+    title:
+      type: string(255)
+      notnull: true
+  relations:
+    Vote:
+      foreign: post_id
+      foreignAlias: Post
+      local: id
+      type: many
+
+Vote:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      unsigned: true
+      notnull: true
+      autoincrement: true
+    is_brat:
+      type: boolean
+      notnull: true
+    post_id:
+      type: integer(4)
+      unsigned: true
+      notnull: true
+  relations:
+    Post:
+      foreign: id
+      foreignAlias: Votes
+      local: post_id
+      type: one
+      cascade: [delete]
