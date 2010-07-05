@@ -1,0 +1,111 @@
+/* Reset -----------------------------------------------------*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,hr,input,textarea,button{border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;background:transparent;margin:0;padding:0}body{line-height:1;color:#000;font-size:12px}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:400}blockquote:before,blockquote:after,q:before,q:after{content:""}section,header,article,aside,footer,nav{display:block}.clearfix:after{visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}* html .clearfix{zoom: 1;}*:first-child+html .clearfix {zoom: 1;}
+
+/* General Styles ------------------------------------------------------*/
+
+html, body {
+	background: #363D43;
+	overflow: hidden;
+	height: 100%;
+	text-shadow: #11181e 1px 1px 1px;
+	color: #d4dde5;
+	font-family: "Helvetica Neue Light", "HelveticaNeue-Light", Arial, Helvetica, sans-serif;
+	font-weight: 300;
+}
+
+::-moz-selection{
+	background: #373e45;
+	color: #fff;
+}
+
+::selection {
+	background: #373e45;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+strong {
+	font-weight: 600;
+}
+
+h1 {
+	position: absolute;
+	top: 36px;
+	left: 36px;
+	z-index: 2000;
+	font-weight: 600;
+	font-size: 24px;
+}
+
+h1 img {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+#results {
+	position: absolute;
+	bottom: 36px;
+	right: 36px;
+	z-index: 2000;
+}
+
+#results img {
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+#subject {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	top: 50%;
+	left: 50%;
+	background: green;
+	margin-top: -150px;
+	margin-left: -150px;
+	z-index: 1000;
+}
+
+a#brat, a#not {
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	float: left;
+	width: 50%;
+	height: 100%;
+	color: #d4dde5;
+	font-size: 18px;
+}
+
+a#not:hover, a#brat:hover {
+	background: #4f575e;
+	color: #fff;
+}
+
+a#brat span.link, a#not span.link {
+	/* -webkit-transition: all .2s ease-in-out; */
+	position: absolute;
+	width: 25%;
+	text-align: center;
+	margin-top: -18px;
+	top: 50%;
+}
+
+a#brat span.link {
+	left: 20%;
+	
+}
+
+a#not span.link {
+	right: 20%;
+}
+
+a#not:hover span.link, a#brat:hover span.link {
+	/* -moz-transform:  scale(1.2); */
+	/* -webkit-transform: scale(1.2); */
+	/* -webkit-transition: -webkit-transform 0.2s ease-in-out; */
+}
