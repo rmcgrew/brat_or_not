@@ -38,7 +38,9 @@ class Post extends BasePost
     {
         return $this->Votes
                     ->getTable()
-                    ->findByIsBrat(true)
+                    ->createQuery('v')
+                    ->where('v.post_id = ?', $this->id)
+                    ->andWhere('v.is_brat = ?', true)
                     ->count();
     }
 
@@ -50,8 +52,12 @@ class Post extends BasePost
      **/
     public function getBratiness()
     {
-        $percent = $this->getTotalYesVotes() / $this->getTotalVotes();
-        $percent = floor($percent * 100);
+        if ($this->getTotalYesVotes() != 0) {
+            $percent = $this->getTotalYesVotes() / $this->getTotalVotes();
+            $percent = floor($percent * 100);
+        } else {
+            $percent = 0;
+        }
         return "$percent%";
     }
 }

@@ -9,7 +9,7 @@
     <?php include_javascripts() ?>
   </head>
   <body>
-    <h1><?php echo image_tag('logo.png', array("alt" => "Brat or Not", "width" => 50, "height" => 50)) ?>Brat or Not</h1>
+    <h1 class="logo"><a href="<?php echo url_for("@homepage") ?>"><?php echo image_tag('logo.png', array("alt" => "Brat or Not", "width" => 50, "height" => 50)) ?>Brat or Not</a></h1>
     <?php echo $sf_content ?>
   </body>
 </html>

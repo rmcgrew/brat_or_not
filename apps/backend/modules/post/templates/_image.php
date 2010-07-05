@@ -1,1 +1,1 @@
-<?php echo image_tag($post->getImagePath()) ?>
+<?php echo image_tag($post->getImagePath(), array("width" => "70")) ?>

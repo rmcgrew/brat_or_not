@@ -46,6 +46,10 @@ h1 img {
 	margin-right: 5px;
 }
 
+h1.logo a {
+    color: #d4dde5;
+}
+
 #results {
 	position: absolute;
 	bottom: 36px;
@@ -56,6 +60,12 @@ h1 img {
 #results img {
 	vertical-align: middle;
 	margin-right: 8px;
+	float: left;
+}
+
+#results .description {
+    margin-top: 10px;
+    float: left;
 }
 
 #subject {
@@ -64,7 +74,6 @@ h1 img {
 	height: 300px;
 	top: 50%;
 	left: 50%;
-	background: green;
 	margin-top: -150px;
 	margin-left: -150px;
 	z-index: 1000;
@@ -108,4 +117,67 @@ a#not:hover span.link, a#brat:hover span.link {
 	/* -moz-transform:  scale(1.2); */
 	/* -webkit-transform: scale(1.2); */
 	/* -webkit-transition: -webkit-transform 0.2s ease-in-out; */
+}
+
+.post_form .title input {
+    background: #d4dde5;
+    line-height: 23px;
+    width: 200px;
+}
+
+.post_form tr {
+    height: 30px;
+}
+.post_form td {
+    padding-left: 20px;
+}
+
+.sf_admin_list td {
+    padding-right: 10px;
+}
+
+#sf_admin_bar {
+    margin-bottom: 20px;
+}
+.sf_admin_filter td {
+    padding-right: 10px;
+}
+.sf_admin_filter tbody input {
+    line-height: 23px;
+    background: #d4dde5;
+    width: 200px;
+}
+
+.sf_admin_form_row {
+    margin-top: 15px;
+    float: left;
+    clear: both;
+}
+
+.sf_admin_form_field_title input {
+    background: #d4dde5;
+    line-height: 23px;
+}
+.sf_admin_form_row label {
+    float: left;
+    margin-right: 20px;
+}
+
+.sf_admin_form_row .content {
+    float: left;
+    width: 150px;
+}
+
+.sf_admin_form_row .help {
+    float: left;
+    clear: both;
+}
+
+.sf_admin_actions {
+    margin-top: 10px;
+}
+
+.sf_admin_actions li {
+    float: left;
+    margin-right: 5px;
 }

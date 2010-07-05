@@ -18,7 +18,8 @@ generator:
         title: { label: "Post Title" }
       list:
         display: [_image, =title, bratiness, totalYesVotes, totalVotes]
-      filter:  ~
+      filter:  
+        display: [title]
       form:    ~
       edit:    ~
       new:     ~

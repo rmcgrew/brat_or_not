@@ -19,23 +19,27 @@ class voteActions extends sfActions
   {
       $this->post = Doctrine::getTable('Post')->fetchRandom();
       if ($request->isMethod("post")) {
-          $this->_processVote($this->post, $request);
+          $this->_processVote($request);
       }
   }
   
-  protected function _processVote($post, $request)
+  protected function _processVote($request)
   {
-      $vote = new Vote();
-      $vote->Post = $post;
-      
-      if (strtolower($request->getParameter("brat")) == "yes") {
-          $vote->is_brat = true;
-      } else if (strtolower($request->getParameter("brat")) == "no") {
-          $vote->is_brat = false;
-      }
+      if ($request->hasParameter("brat") && $request->hasParameter("post")) {
+          $post = Doctrine::getTable('Post')
+                          ->find($request->getParameter("post"));
+          $vote = new Vote();
+          $vote->Post = $post;
 
-      if ($vote->is_brat !== null) {
-          $vote->save();
+          if (strtolower($request->getParameter("brat")) == "yes") {
+              $vote->is_brat = true;
+          } else if (strtolower($request->getParameter("brat")) == "no") {
+              $vote->is_brat = false;
+          }
+
+          if ($vote->is_brat !== null) {
+              $vote->save();
+          }
       }
 
       $this->redirect("vote/index");
