@@ -1,5 +1,5 @@
 <h1>Add an Image</h1>
-<form action="" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+<form class="post_form" action="" method="post" accept-charset="utf-8" enctype="multipart/form-data">
     <?php echo $form['_csrf_token']->render() ?>
     <ul>
         <li>

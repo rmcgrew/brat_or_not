@@ -16,4 +16,42 @@ class Post extends BasePost
     {
         return "/uploads/images/{$this->image}";
     }
+
+    /**
+     * Get Total Votes for a Post
+     *
+     * @return int
+     * @author Ryan McGrew <ryan.mcgrew@nerdery.com>
+     **/
+    public function getTotalVotes()
+    {
+        return $this->Votes->count();
+    }
+
+    /**
+     * Get Total Number of Yes Votes
+     *
+     * @return int
+     * @author Ryan McGrew <ryan.mcgrew@nerdery.com>
+     **/
+    public function getTotalYesVotes()
+    {
+        return $this->Votes
+                    ->getTable()
+                    ->findByIsBrat(true)
+                    ->count();
+    }
+
+    /**
+     * Return the percentage of Yes Votes
+     *
+     * @return string
+     * @author Ryan McGrew <ryan.mcgrew@nerdery.com>
+     **/
+    public function getBratiness()
+    {
+        $percent = $this->getTotalYesVotes() / $this->getTotalVotes();
+        $percent = floor($percent * 100);
+        return "$percent%";
+    }
 }

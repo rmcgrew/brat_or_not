@@ -8,16 +8,16 @@
  * @property integer $id
  * @property string $image
  * @property string $title
- * @property Doctrine_Collection $Vote
+ * @property Doctrine_Collection $Votes
  * 
  * @method integer             getId()    Returns the current record's "id" value
  * @method string              getImage() Returns the current record's "image" value
  * @method string              getTitle() Returns the current record's "title" value
- * @method Doctrine_Collection getVote()  Returns the current record's "Vote" collection
+ * @method Doctrine_Collection getVotes() Returns the current record's "Votes" collection
  * @method Post                setId()    Sets the current record's "id" value
  * @method Post                setImage() Sets the current record's "image" value
  * @method Post                setTitle() Sets the current record's "title" value
- * @method Post                setVote()  Sets the current record's "Vote" collection
+ * @method Post                setVotes() Sets the current record's "Votes" collection
  * 
  * @package    brat_or_not
  * @subpackage model
@@ -51,7 +51,7 @@ abstract class BasePost extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Vote', array(
+        $this->hasMany('Vote as Votes', array(
              'local' => 'id',
              'foreign' => 'post_id'));
 

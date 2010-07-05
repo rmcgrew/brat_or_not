@@ -13,12 +13,6 @@ Post:
     title:
       type: string(255)
       notnull: true
-  relations:
-    Vote:
-      foreign: post_id
-      foreignAlias: Post
-      local: id
-      type: many
 
 Vote:
   actAs: [Timestampable]
